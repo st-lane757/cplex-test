@@ -1,0 +1,31 @@
+
+// workforce_planning_opl.dat (toy data)
+Workers = {"W1","W2","W3","W4"};
+Days = {"Mon","Tue","Wed"};
+Shifts = {"Day","Night"};
+Skills = {"Weld","Fit","Test"};
+
+// demand[day][shift][skill]
+demand = 
+  <
+    < <1,1,0>, <1,0,0> >, // Mon: Day requires Weld=1,Fit=1,Test=0; Night requires Weld=1
+    < <1,1,1>, <1,0,1> >, // Tue
+    < <1,1,0>, <1,1,1> >  // Wed
+  >;
+
+// hasSkill[worker][skill]
+hasSkill = 
+  <
+    <1,1,0>,   // W1
+    <1,0,1>,   // W2
+    <0,1,1>,   // W3
+    <1,1,1>    // W4
+  >;
+
+maxShiftsPerWorker = 2;
+
+// assignment costs (flat = 1.0)
+assignCost = [[[1,1],[1,1],[1,1]],  // W1 (Mon/Tue/Wed x Day/Night)
+              [[1,1],[1,1],[1,1]],  // W2
+              [[1,1],[1,1],[1,1]],  // W3
+              [[1,1],[1,1],[1,1]]]; // W4

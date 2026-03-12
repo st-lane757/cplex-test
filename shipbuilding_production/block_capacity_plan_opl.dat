@@ -1,0 +1,26 @@
+
+// block_capacity_plan_opl.dat (toy data)
+Blocks = {"B001","B002","B003"};
+Centers = {"PanelLine","WeldingBay","Outfitting"};
+Periods = {"W1","W2","W3"};
+
+hours_req =
+  <
+    < 40, 60, 20>,  // B001 needs hours by center
+    < 30, 30, 30>,  // B002
+    < 20, 50, 40>   // B003
+  >;
+
+cap =
+  <
+    < 50, 50, 50>,  // PanelLine capacity per week
+    < 80, 80, 80>,  // WeldingBay
+    < 40, 40, 40>   // Outfitting
+  >;
+
+overtimeCost =
+  <
+    < 5, 5, 5>,
+    < 8, 8, 8>,
+    < 10,10,10>
+  >;
